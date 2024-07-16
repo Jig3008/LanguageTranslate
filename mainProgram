@@ -1,0 +1,13 @@
+#install the dependencies
+!pip install translate
+from translate import Translator
+
+#Pass the language codes for which you want to translate the text
+languages = ['hi','de']
+
+inputText = input('Enter the text you want to translate')
+
+for language in languages:
+  translator = Translator(provider='mymemory', from_lang='en', to_lang = language)
+  translation = translator.translate(inputText)
+  print(f'Translation of {inputText} in {language} is {translation}') 
